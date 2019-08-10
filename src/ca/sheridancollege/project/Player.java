@@ -15,6 +15,7 @@ package ca.sheridancollege.project;
 public abstract class Player{
 
     private String playerID; //the unique ID for this player
+    private int money;
 
     /**
      * A constructor that allows you to set the player's unique ID
