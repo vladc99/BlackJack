@@ -4,7 +4,9 @@ import java.util.*;
 
 /**
  *
- * @author Brydon
+ * @author Brydon Parsons
+ * @author Vlad Crihan 
+ * @author Adit Tandon
  */
 public class Run {
 
@@ -126,7 +128,8 @@ public class Run {
                     System.out.println("\n\n");
                 }
             }
-
+            
+            //reset hands
             game.getP().getHand().clear();
             game.getD().getHand().clear();
         }

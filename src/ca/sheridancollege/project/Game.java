@@ -7,10 +7,9 @@
 package ca.sheridancollege.project;
 
 /**
- * The class that models your game. You should create a more specific child of
- * this class and instantiate the methods given.
- *
- * @author dancye, 2018
+ * @author Brydon Parsons
+ * @author Vlad Crihan 
+ * @author Adit Tandon
  */
 public class Game{
     
@@ -39,21 +38,5 @@ public class Game{
 
     public Deck getDeck() {
         return deck;
-    }    
-    
-//    public User checkWin(){
-//        if((p.cardTotal() > d.cardTotal()) && (p.cardTotal() <= 21) )
-//            return p;
-//        else if(d.cardTotal() > p.cardTotal() && (d.cardTotal() <= 21))
-//            return d;
-//        else
-//            return null;
-//    }
-//    
-//    public boolean checkBust() {
-//        if (p.cardTotal() > 21 || d.cardTotal() > 21) {
-//            return true;
-//        }
-//        return false;
-//    }
-}//end class
+    }
+}

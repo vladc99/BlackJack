@@ -7,7 +7,9 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author lpuad
+ * @author Brydon Parsons
+ * @author Vlad Crihan 
+ * @author Adit Tandon
  */
 public class Balance {
     

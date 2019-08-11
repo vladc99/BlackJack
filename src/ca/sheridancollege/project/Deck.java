@@ -2,6 +2,11 @@ package ca.sheridancollege.project;
 
 import java.util.*;
 
+/**
+ * @author Brydon Parsons
+ * @author Vlad Crihan 
+ * @author Adit Tandon
+*/
 public class Deck{
 
     private ArrayList<Card> deck = new ArrayList<>();

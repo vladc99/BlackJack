@@ -8,8 +8,9 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 
 /**
- *
- * @author lpuad
+ * @author Brydon Parsons
+ * @author Vlad Crihan 
+ * @author Adit Tandon
  */
 public abstract class User {
     
