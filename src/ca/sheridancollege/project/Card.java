@@ -6,30 +6,85 @@
  */
 package ca.sheridancollege.project;
 
-/**
- * A class to be used as the base Card class for the project. Must be general
- * enough to be instantiated for any Card game. Students wishing to add to the
- * code should remember to add themselves as a modifier.
- *
- * @author dancye, 2018
- */
-public abstract class Card{
+public class Card {
 
-    String value;
-    Suit suit;
+    private Suit suit;
+    private Value value;
 
-    public Card(String value, Suit suit){
+    //Value, then int rep as suit
+    public Card(int value, int suit) {
+        this.value = convertValue(value);
+        this.suit = getSuit(suit);
+    }
+
+    public Card(Suit suit, Value value) {
         this.value = value;
         this.suit = suit;
     }
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a
-     * regular playing card etc.
-     */
-    @Override
-    public abstract String toString();
+    public Suit getSuit(int value) {
+        Suit suit = null;
 
+        if (value == 0) {
+            return Suit.DIAMOND;
+        } else if (value == 1) {
+            return Suit.HEART;
+        } else if (value == 2) {
+            return Suit.SPADE;
+        } else if (value == 3) {
+            return Suit.CLUB;
+        }
+
+        return suit;
+    }
+
+    private Value convertValue(int temp) {
+        Value none = null;
+
+        switch (temp) {
+            case 1:
+                return Value.ACE;
+            case 2:
+                return Value.TWO;
+            case 3:
+                return Value.THREE;
+            case 4:
+                return Value.FOUR;
+            case 5:
+                return Value.FIVE;
+            case 6:
+                return Value.SIX;
+            case 7:
+                return Value.SEVEN;
+            case 8:
+                return Value.EIGHT;
+            case 9:
+                return Value.NINE;
+            case 10:
+                return Value.TEN;
+            case 11:
+                return Value.JACK;
+            case 12:
+                return Value.QUEEN;
+            case 13:
+                return Value.KING;
+            default:
+                break;
+        }
+        return none;
+
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public Value getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.value) + " of " + String.valueOf(this.suit);
+    }
 }

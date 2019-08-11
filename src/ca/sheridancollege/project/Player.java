@@ -1,11 +1,3 @@
-/**
- * SYST 17796 Project Winter 2019 Base code.
- * Students can modify and extend to implement their game.
- * Add your name as a modifier and the date!
- *
- * @modifier Brydon Parsons, 11/08/2019
- *
- */
 package ca.sheridancollege.project;
 
 /**
@@ -14,40 +6,38 @@ package ca.sheridancollege.project;
  *
  * @author dancye, 2018
  */
-public abstract class Player{
+public class Player extends User{
 
     private String playerID; //the unique ID for this player
-    private int money;
+    private Balance balance;
 
     /**
      * A constructor that allows you to set the player's unique ID
      *
      * @param name the unique ID to assign to this player.
      */
-    public Player(String name){
+    
+    public Player(String name) {
         playerID = name;
+        balance = new Balance();
     }
 
     /**
      * @return the playerID
      */
-    public String getPlayerID(){
+    public Balance getBalance() {
+        return balance;
+    }
+
+    public String getPlayerID() {
         return playerID;
     }
 
-    /**
-     * Ensure that the playerID is unique
-     *
-     * @param givenID the playerID to set
-     */
-    public void setPlayerID(String givenID){
-        playerID = givenID;
+    public void setBalance(Balance balance) {
+        this.balance = balance;
     }
-
-    /**
-     * The method to be instantiated when you subclass the Player class with
-     * your specific type of Player and filled in with logic to play your game.
-     */
-    public abstract void play();
-
+    
+    public String printBalance(){
+        return "Balance Total: $"+balance.getTotalBalance();
+    }
 }
