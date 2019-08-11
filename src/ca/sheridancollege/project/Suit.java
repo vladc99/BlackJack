@@ -4,7 +4,7 @@ package ca.sheridancollege.project;
  *
  * @author Brydon
  */
-public enum Suits{
+public enum Suit{
     DIAMOND, HEART, SPADE, CLUB;
 
 }

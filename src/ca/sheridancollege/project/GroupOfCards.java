@@ -3,6 +3,8 @@
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
  *
+ * @modifier Brydon Parsons, 11/08/2019
+ *
  */
 package ca.sheridancollege.project;
 
@@ -16,7 +18,7 @@ import java.util.Collections;
  *
  * @author dancye
  */
-public class GroupOfCards{
+public abstract class GroupOfCards{
 
     //The group of cards, stored in an ArrayList
     private ArrayList<Card> cards;
@@ -39,9 +41,7 @@ public class GroupOfCards{
         Collections.shuffle(cards);
     }
 
-    /**
-     * @return the size of the group of cards
-     */
+//   @return the size of the group of cards
     public int getSize(){
         return size;
     }

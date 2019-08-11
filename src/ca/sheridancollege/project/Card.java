@@ -14,7 +14,14 @@ package ca.sheridancollege.project;
  * @author dancye, 2018
  */
 public abstract class Card{
-    //default modifier for child classes
+
+    String value;
+    Suit suit;
+
+    public Card(String value, Suit suit){
+        this.value = value;
+        this.suit = suit;
+    }
 
     /**
      * Students should implement this method for their specific children classes

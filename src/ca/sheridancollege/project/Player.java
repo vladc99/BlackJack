@@ -3,6 +3,8 @@
  * Students can modify and extend to implement their game.
  * Add your name as a modifier and the date!
  *
+ * @modifier Brydon Parsons, 11/08/2019
+ *
  */
 package ca.sheridancollege.project;
 
