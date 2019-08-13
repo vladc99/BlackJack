@@ -9,40 +9,39 @@ import java.util.ArrayList;
 
 /**
  * @author Brydon Parsons
- * @author Vlad Crihan 
+ * @author Vlad Crihan
  * @author Adit Tandon
  */
-public abstract class User {
-    
+public abstract class User{
+
     private ArrayList<Card> hand = new ArrayList<>();
-    
-    public void addCard(Card card) {
+
+    public void addCard(Card card){
         hand.add(card);
     }
 
-    public ArrayList<Card> getHand() {
+    public ArrayList<Card> getHand(){
         return hand;
     }
-    
-    public int cardTotal() {
+
+    public int cardTotal(){
         int total = 0;
-        for (int i = 0; i < hand.size(); i++) {
+        for(int i = 0; i < hand.size(); i++){
             total += hand.get(i).getValue().getValue();
         }
-        
         return total;
     }
-    
-    public double stand() {
+
+    public double stand(){
         return cardTotal();
     }
-    
+
     public String printHand(String name){
         name += "'s hand\n";
-        for (int i = 0; i < hand.size(); i++) {
-            name += hand.get(i)+"\n";
+        for(int i = 0; i < hand.size(); i++){
+            name += hand.get(i) + "\n";
         }
-        name += "Total: " + cardTotal()+"\n";
+        name += "Total: " + cardTotal() + "\n";
         return name;
     }
 }

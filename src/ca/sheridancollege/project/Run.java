@@ -3,7 +3,6 @@ package ca.sheridancollege.project;
 import java.util.*;
 
 /**
- *
  * @author Brydon Parsons
  * @author Vlad Crihan
  * @author Adit Tandon
@@ -12,11 +11,11 @@ public class Run{
 
     public static void main(String[] args){
 
-        boolean gameOver = false;
+        boolean gameOver = false;//Boolean that controls main loop of the game
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter your first name: ");
-        String name = input.next();
+        System.out.println("Please enter your name: ");
+        String name = input.nextLine();
         double balance = 0;
 
         System.out.println("Enter your intial balance: ");
@@ -29,6 +28,7 @@ public class Run{
             }
         }
 
+        //Create the Deck and the Game objects
         Deck deck = new Deck();
         Game game = new Game(new Player(name), new Dealer(), deck);
 
@@ -49,8 +49,8 @@ public class Run{
         System.out.println("Welcome to BlackJack!");
         while(gameOver == false){// This is the main loop of the game
             double bet = 0;
-            if(deck.getDeckSize() < 20){//Resets deck when it gets low
-                deck = new Deck();
+            if(deck.getDeckSize() < 20){
+                deck = new Deck();//Resets deck when it gets low
             }
             System.out.println("Please enter your bet(Minimum $10): ");
             try{
@@ -59,6 +59,7 @@ public class Run{
                 System.out.println("Please only enter numbers: ");
                 input.next();
             }
+            //Check Bet > Balance
             while(bet > game.getP().getBalance().getTotalBalance()){
                 System.out.println("Your bet is more than your balance. "
                         + "Enter a new bet");
@@ -69,6 +70,7 @@ public class Run{
                     input.next();
                 }
             }
+            //Make sure bet is an Integer > 10
             while(bet < 10){
                 try{
                     System.out.println("Minimum bet should be $10! \nEnter again");
@@ -78,17 +80,17 @@ public class Run{
                     input.next();
                 }
             }
-            //player get's 2 cards
+            //Player get's 2 cards
             for(int i = 0; i < 2; i++){
                 game.getP().addCard(game.getDeck().getTopCard());
             }
             //Dealer get's a card
             game.getD().addCard(game.getDeck().getTopCard());
 
-            //print dealer hand
+            //Print dealer hand
             System.out.println("\n" + game.getD().printHand("Dealer"));
 
-            //print user hand
+            //Print user hand
             System.out.println(game.getP().printHand(
                     game.getP().getPlayerID()));
 
@@ -97,12 +99,14 @@ public class Run{
             System.out.println("Would you like to HIT or STAND?");
             String action = "";
 
+            //Check for Hit or Stand
             action = input.next().toUpperCase();
             while(!action.equals("HIT") && !action.equals("STAND")){
                 System.out.println("Please choose Hit or Stand");
                 action = input.next().toUpperCase();
             }
 
+            //Player Hit
             boolean playerBusted = false;
             while(action.equals("HIT")){
                 game.getP().addCard(game.getDeck().getTopCard());
@@ -113,13 +117,14 @@ public class Run{
                     playerBusted = true;
                     break;
                 }
+                //Promt player for next action Hit or Stand
                 System.out.println("\n" + game.getP().printHand(name));
                 System.out.println("Would you like to HIT or STAND?");
                 action = input.next().toUpperCase();
 
             }
 
-            //dealer's turn
+            //Dealer's turn
             boolean dealerBusted = false;
             if(!playerBusted){
                 game.getD().addCard(game.getDeck().getTopCard());
@@ -137,7 +142,7 @@ public class Run{
                 }
             }
 
-            //check for win
+            //Check for win
             if(!dealerBusted && !playerBusted){
                 if(game.getP().cardTotal() > game.getD().cardTotal()){
                     playerWin(game, bet);
@@ -146,10 +151,10 @@ public class Run{
                 }
             }
 
-            //print balance
+            //Print Balance of Player
             System.out.println(game.getP().printBalance());
 
-            //ask player if you want to play again
+            //Ask player if you want to play again
             if(game.getP().getBalance().getTotalBalance() > 10){
                 System.out.println("Do you want to play again?");
                 if(input.next().toUpperCase().equals("NO")){
@@ -161,25 +166,30 @@ public class Run{
                     }
                     System.out.println("\n\n");
                 }
+            }else{
+                System.out.println("Not enough money to play again. "
+                        + "Time to visit the bank!");
+                gameOver = true;
             }
 
-            //reset hands
+            //Reset Player & Dealer's Hand objects
             game.getP().getHand().clear();
             game.getD().getHand().clear();
         }
     }
 
-    public static void playerWin(Game game, double bet){
+    //Check for player win
+    private static void playerWin(Game game, double bet){
         game.getP().getBalance().addBalance(
                 bet * game.getWIN_RATIO());
         System.out.println(game.getP().getPlayerID() + " won $"
                 + bet * game.getWIN_RATIO());
     }
 
-    public static void playerLose(Game game, double bet){
+    //Check for player losing
+    private static void playerLose(Game game, double bet){
         game.getP().getBalance().loseBalance(bet);
         System.out.println("Dealer wins\n" + game.getP().getPlayerID()
                 + " lost $" + bet);
     }
-
 }

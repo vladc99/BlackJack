@@ -6,29 +6,28 @@
 package ca.sheridancollege.project;
 
 /**
- *
  * @author Brydon Parsons
- * @author Vlad Crihan 
+ * @author Vlad Crihan
  * @author Adit Tandon
  */
-public class Balance {
-    
+public class Balance{
+
     private double totalBalance;
-    
-    public double getTotalBalance() {
+
+    public double getTotalBalance(){
         return totalBalance;
     }
-    
-    public void setTotalBalance(double totalBalance) {
+
+    public void setTotalBalance(double totalBalance){
         this.totalBalance = totalBalance;
     }
-    
-    public double loseBalance(double money) {
+
+    public double loseBalance(double money){
         totalBalance = totalBalance - money;
         return totalBalance;
     }
-    
-    public double addBalance(double money) {
+
+    public double addBalance(double money){
         totalBalance = totalBalance + money;
         return totalBalance;
     }
