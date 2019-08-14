@@ -4,24 +4,31 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Vlad Crihan 
  * @author Adit Tandon
+ * @author Saharsh Raina
+ * 
+ * This class models one individual card
 */
-
 public class Card {
 
     private Suit suit;
     private Value value;
 
-    //Value, then int rep as suit
     public Card(int value, int suit) {
         this.value = convertValue(value);
         this.suit = getSuit(suit);
     }
-
+    
     public Card(Suit suit, Value value) {
         this.value = value;
         this.suit = suit;
     }
-
+    
+    /**
+     * @param value Certain value that corresponds to an enum value
+     * @return Suit returns a Suit object with the assigned enum value
+     * 
+     * This method allows for easy creation of cards
+    */
     public Suit getSuit(int value) {
         Suit suit = null;
 
@@ -37,7 +44,11 @@ public class Card {
 
         return suit;
     }
-
+    
+    /**
+     * @param temp Value to correspond to a card value
+     * @return Value returns the Value object with an assignment value
+    */
     private Value convertValue(int temp) {
         Value none = null;
 
@@ -74,7 +85,7 @@ public class Card {
         return none;
 
     }
-
+    
     public Suit getSuit() {
         return suit;
     }
