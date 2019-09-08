@@ -6,9 +6,8 @@ import java.util.*;
  * @author Brydon Parsons
  * @author Vlad Crihan
  * @author Adit Tandon
- * @author Saharsh Raina
- * 
- * This class runs the game and consists of all the conditionals responsible 
+ *
+ * This class runs the game and consists of all the conditionals responsible
  * to make sure the game runs smoothly.
  */
 public class Run{
@@ -184,10 +183,10 @@ public class Run{
 
     /**
      * @param game Game object being passed in
-     * @param bet Variable representing the bet 
-     * 
+     * @param bet Variable representing the bet
+     *
      * Calculates the amount the player wins and prints out a winning statement
-    */
+     */
     private static void playerWin(Game game, double bet){
         game.getP().getBalance().addBalance(
                 bet * game.getWIN_RATIO());
@@ -197,10 +196,10 @@ public class Run{
 
     /**
      * @param Game Game object being passed in
-     * @param bet Variable representing the bet 
-     * 
+     * @param bet Variable representing the bet
+     *
      * Calculates the amount the player loses and prints out a losing statement
-    */
+     */
     private static void playerLose(Game game, double bet){
         game.getP().getBalance().loseBalance(bet);
         System.out.println("Dealer wins\n" + game.getP().getPlayerID()

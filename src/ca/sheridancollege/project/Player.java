@@ -4,8 +4,7 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Vlad Crihan
  * @author Adit Tandon
- * @author Saharsh Raina
- * 
+ *
  * Class models a player that is derived from the User class
  */
 public class Player extends User{
@@ -35,6 +34,6 @@ public class Player extends User{
      * @return String 
     */
     public String printBalance(){
-        return "Balance Total: $" + balance.getTotalBalance();
+        return String.format("Balance Total: $%.2f", balance.getTotalBalance());
     }
 }

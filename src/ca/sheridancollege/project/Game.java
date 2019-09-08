@@ -10,8 +10,7 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Vlad Crihan
  * @author Adit Tandon
- * @author Saharsh Raina
- * 
+ *
  * Class adds player, dealer and deck to an instance of Game which can be 
  * initialized to run in the Run.java Class
  */

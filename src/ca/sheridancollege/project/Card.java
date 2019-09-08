@@ -4,8 +4,7 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Vlad Crihan 
  * @author Adit Tandon
- * @author Saharsh Raina
- * 
+ *
  * This class models one individual card
 */
 public class Card {

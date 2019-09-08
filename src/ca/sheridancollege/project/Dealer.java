@@ -4,8 +4,7 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Adit Tandon
  * @author Vlad Crihan
- * @author Saharsh Raina
- * 
+ *
  * Class models the dealer AI that is derived from the User class
  */
 public class Dealer extends User{

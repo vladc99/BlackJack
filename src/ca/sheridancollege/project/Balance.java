@@ -4,8 +4,7 @@ package ca.sheridancollege.project;
  * @author Brydon Parsons
  * @author Vlad Crihan
  * @author Adit Tandon
- * @author Saharsh Raina
- * 
+ *
  * This class contains the methods for calculating losses and wins and adding
  * it to the player's overall balance
  */
